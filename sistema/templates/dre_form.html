@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}DRE {{ meses_pt[mes] }}/{{ ano }}{% endblock %}
+{% block page_title %}DRE - {{ meses_pt[mes] }}/{{ ano }}{% endblock %}
+{% block content %}
+
+<form method="post" class="row g-3">
+  <div class="col-md-4"><label class="form-label">Receita Bruta de Vendas</label><input type="text" class="form-control" name="receita_bruta" value="{{ d.receita_bruta }}"></div>
+  <div class="col-md-4"><label class="form-label">Devolucoes e Cancelamentos</label><input type="text" class="form-control" name="devolucoes" value="{{ d.devolucoes }}"></div>
+  <div class="col-md-4"><label class="form-label">Aliquota Impostos sobre Vendas (%)</label><input type="text" class="form-control" name="aliquota_impostos" value="{{ (d.aliquota_impostos*100)|round(2) }}"></div>
+
+  <div class="col-md-4"><label class="form-label">CMV (Custo da Mercadoria Vendida)</label><input type="text" class="form-control" name="cmv" value="{{ d.cmv }}"></div>
+  <div class="col-md-4"><label class="form-label">Numero de Vendas no Mes (Cupons)</label><input type="text" class="form-control" name="numero_vendas" value="{{ d.numero_vendas }}"></div>
+
+  <div class="col-12"><hr><h5>Despesas Operacionais</h5></div>
+  <div class="col-md-4"><label class="form-label">Salarios e Encargos</label><input type="text" class="form-control" name="salarios" value="{{ d.salarios }}"></div>
+  <div class="col-md-4"><label class="form-label">Aluguel</label><input type="text" class="form-control" name="aluguel" value="{{ d.aluguel }}"></div>
+  <div class="col-md-4"><label class="form-label">Energia e Agua</label><input type="text" class="form-control" name="energia_agua" value="{{ d.energia_agua }}"></div>
+  <div class="col-md-4"><label class="form-label">Materiais e Embalagens</label><input type="text" class="form-control" name="materiais_embalagens" value="{{ d.materiais_embalagens }}"></div>
+  <div class="col-md-4"><label class="form-label">Marketing</label><input type="text" class="form-control" name="marketing" value="{{ d.marketing }}"></div>
+  <div class="col-md-4"><label class="form-label">Outras Despesas Operacionais</label><input type="text" class="form-control" name="outras_despesas" value="{{ d.outras_despesas }}"></div>
+
+  <div class="col-12"><hr><h5>Financeiro</h5></div>
+  <div class="col-md-4"><label class="form-label">Despesas Financeiras</label><input type="text" class="form-control" name="despesas_financeiras" value="{{ d.despesas_financeiras }}"></div>
+  <div class="col-md-4"><label class="form-label">Receitas Financeiras</label><input type="text" class="form-control" name="receitas_financeiras" value="{{ d.receitas_financeiras }}"></div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="{{ url_for('dre_list', ano=ano) }}" class="btn btn-outline-secondary">Voltar</a>
+  </div>
+</form>
+{% endblock %}

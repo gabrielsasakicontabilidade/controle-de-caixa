@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block page_title %}Resumo Geral{% endblock %}
+{% block content %}
+<div class="row g-3 mb-4">
+  <div class="col-md-3">
+    <div class="card card-kpi p-3">
+      <div class="d-flex justify-content-between align-items-start mb-1">
+        <div class="text-muted small">Saldo Atual de Caixa</div>
+        <span class="badge-pill {{ 'badge-green' if saldo >= 0 else 'badge-red' }}">{{ 'Alta' if saldo >= 0 else 'Baixo' }}</span>
+      </div>
+      <div class="fs-4 fw-bold {{ 'text-danger' if saldo < 0 else '' }}" style="color:{{ '' if saldo < 0 else '#111B15' }}">{{ saldo|brl }}</div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-kpi p-3">
+      <div class="d-flex justify-content-between align-items-start mb-1">
+        <div class="text-muted small">Contas a Pagar (em aberto)</div>
+        <span class="badge-pill {{ 'badge-amber' if total_pagar_atrasado > 0 else 'badge-green' }}">{{ 'Pendente' if total_pagar_atrasado > 0 else 'Em dia' }}</span>
+      </div>
+      <div class="fs-4 fw-bold">{{ total_pagar_aberto|brl }}</div>
+      <div class="small text-danger">{{ total_pagar_atrasado|brl }} atrasado</div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-kpi p-3">
+      <div class="d-flex justify-content-between align-items-start mb-1">
+        <div class="text-muted small">Contas a Receber (em aberto)</div>
+        <span class="badge-pill badge-green">Alta</span>
+      </div>
+      <div class="fs-4 fw-bold">{{ total_receber_aberto|brl }}</div>
+      <div class="small text-danger">{{ total_receber_atrasado|brl }} atrasado</div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-kpi p-3">
+      <div class="d-flex justify-content-between align-items-start mb-1">
+        <div class="text-muted small">Vencendo nos proximos 7 dias</div>
+        <span class="badge-pill {{ 'badge-amber' if vencendo|length > 0 else 'badge-green' }}">{{ 'Atencao' if vencendo|length > 0 else 'Tranquilo' }}</span>
+      </div>
+      <div class="fs-4 fw-bold">{{ vencendo|length }} contas</div>
+      <div class="small text-muted">Total de {{ (vencendo|sum(attribute='valor'))|brl }}</div>
+    </div>
+  </div>
+</div>
+
+{% if vencendo|length > 0 %}
+{% set c0 = vencendo[0] %}
+<div class="card p-3 mb-4" style="background:#FEF3C7; box-shadow:none;">
+  <div class="d-flex align-items-center gap-2">
+    <i data-lucide="triangle-alert" style="color:#D97706; width:20px; height:20px; flex-shrink:0;"></i>
+    <div style="color:#92400E; font-size:.88rem;">
+      <strong>Atencao:</strong> A conta {{ c0.fornecedor }} — {{ c0.valor|brl }} vence em {{ (c0.data_vencimento - hoje).days }} dias. Verifique o saldo disponivel.
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="card p-3">
+      <h5>Ultimos Lancamentos de Caixa</h5>
+      <table class="table table-sm">
+        <thead><tr><th>Data</th><th>Descricao</th><th>Categoria</th><th class="text-end">Valor</th></tr></thead>
+        <tbody>
+        {% for m in ultimos_mov %}
+          <tr>
+            <td>{{ m.data|brdate }}</td>
+            <td>{{ m.descricao }}</td>
+            <td>{{ m.categoria }}</td>
+            <td class="text-end {{ 'text-success' if m.tipo=='Entrada' else 'text-danger' }}">
+              {{ '+' if m.tipo=='Entrada' else '-' }}{{ m.valor|brl }}
+            </td>
+          </tr>
+        {% else %}
+          <tr><td colspan="4" class="text-muted">Nenhum lancamento ainda.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <a href="{{ url_for('movimento_list') }}" class="btn btn-sm btn-success">Ver Movimento Completo</a>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card p-3">
+      <h5>Contas a Pagar Vencendo em 7 Dias</h5>
+      <table class="table table-sm">
+        <thead><tr><th>Fornecedor</th><th>Vencimento</th><th class="text-end">Valor</th></tr></thead>
+        <tbody>
+        {% for c in vencendo %}
+          <tr>
+            <td>{{ c.fornecedor }}</td>
+            <td>{{ c.data_vencimento|brdate }}</td>
+            <td class="text-end">{{ c.valor|brl }}</td>
+          </tr>
+        {% else %}
+          <tr><td colspan="3" class="text-muted">Nada vencendo nos proximos 7 dias.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <a href="{{ url_for('pagar_list') }}" class="btn btn-sm btn-success">Ver Contas a Pagar</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

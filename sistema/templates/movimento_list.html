@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Movimento de Caixa Diario{% endblock %}
+{% block page_title %}Movimento de Caixa Diario{% endblock %}
+{% block content %}
+
+<div class="card p-3 mb-4">
+  <h5>Novo Lancamento</h5>
+  <form method="post" class="row g-2 align-items-end">
+    <div class="col-md-2">
+      <label class="form-label">Data</label>
+      <input type="date" class="form-control" name="data" value="{{ hoje }}" required>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Descricao</label>
+      <input type="text" class="form-control" name="descricao" required>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Categoria</label>
+      <select class="form-select" name="categoria" required>
+        {% for c in categorias %}
+          <option value="{{ c }}">{{ c }}{{ ' (entrada)' if c in categorias_entrada else ' (saida)' }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Valor (R$)</label>
+      <input type="text" class="form-control" name="valor" placeholder="0,00" required>
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-success w-100">Adicionar</button>
+    </div>
+  </form>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="card card-kpi p-3">
+      <div class="text-muted small">Total Entradas</div>
+      <div class="fs-4 fw-bold" style="color:#2D6A4F;">{{ total_entradas|brl }}</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-kpi p-3">
+      <div class="text-muted small">Total Saidas</div>
+      <div class="fs-4 fw-bold" style="color:#C0392B;">{{ total_saidas|brl }}</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-kpi p-3">
+      <div class="text-muted small">Saldo do Periodo</div>
+      <div class="fs-4 fw-bold">{{ saldo_periodo|brl }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="card p-3">
+  <div class="d-flex justify-content-between mb-2">
+    <h5>Historico (mais recente primeiro)</h5>
+    <div class="fw-bold">Saldo Inicial: {{ saldo_inicial|brl }}</div>
+  </div>
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr><th>Data</th><th>Descricao</th><th>Categoria</th><th class="text-end">Entrada</th><th class="text-end">Saida</th><th class="text-end">Saldo Acumulado</th><th></th></tr>
+    </thead>
+    <tbody>
+    {% for m, saldo in linhas %}
+      <tr class="{{ 'linha-negativa' if saldo < 0 else '' }}">
+        <td>{{ m.data|brdate }}</td>
+        <td>{{ m.descricao }}</td>
+        <td>{{ m.categoria }}</td>
+        <td class="text-end text-success">{{ (m.entrada|brl) if m.entrada else '' }}</td>
+        <td class="text-end text-danger">{{ (m.saida|brl) if m.saida else '' }}</td>
+        <td class="text-end fw-bold">{{ saldo|brl }}</td>
+        <td>
+          <form method="post" action="{{ url_for('movimento_excluir', item_id=m.id) }}" onsubmit="return confirm('Excluir este lancamento?');">
+            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+          </form>
+        </td>
+      </tr>
+    {% else %}
+      <tr><td colspan="7" class="text-muted">Nenhum lancamento cadastrado ainda.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

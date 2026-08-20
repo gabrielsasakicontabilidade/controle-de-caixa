@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Contas a Pagar{% endblock %}
+{% block page_title %}Contas a Pagar{% endblock %}
+{% block content %}
+
+<div class="card p-3 mb-4">
+  <h5>Nova Conta a Pagar</h5>
+  <form method="post" class="row g-2 align-items-end">
+    <div class="col-md-2"><label class="form-label">Fornecedor</label><input type="text" class="form-control" name="fornecedor" required></div>
+    <div class="col-md-2"><label class="form-label">Descricao / NF</label><input type="text" class="form-control" name="descricao"></div>
+    <div class="col-md-2">
+      <label class="form-label">Categoria</label>
+      <select class="form-select" name="categoria" required>
+        {% for c in categorias %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="col-md-2"><label class="form-label">Emissao</label><input type="date" class="form-control" name="data_emissao"></div>
+    <div class="col-md-2"><label class="form-label">Vencimento</label><input type="date" class="form-control" name="data_vencimento" required></div>
+    <div class="col-md-1"><label class="form-label">Valor</label><input type="text" class="form-control" name="valor" placeholder="0,00" required></div>
+    <div class="col-md-1"><button type="submit" class="btn btn-success w-100">Add</button></div>
+    <div class="col-md-12"><label class="form-label">Observacoes</label><input type="text" class="form-control" name="observacoes"></div>
+  </form>
+</div>
+
+<div class="row g-3 mb-3">
+  <div class="col-md-4"><div class="card p-3"><div class="text-muted small">Total em Aberto</div><div class="fs-5 fw-bold">{{ total_aberto|brl }}</div></div></div>
+  <div class="col-md-4"><div class="card p-3"><div class="text-muted small">Total Atrasado</div><div class="fs-5 fw-bold text-danger">{{ total_atrasado|brl }}</div></div></div>
+  <div class="col-md-4"><div class="card p-3"><div class="text-muted small">Total Pago</div><div class="fs-5 fw-bold text-success">{{ total_pago|brl }}</div></div></div>
+</div>
+
+<div class="card p-3">
+  <table class="table table-sm table-hover">
+    <thead><tr><th>Fornecedor</th><th>Categoria</th><th>Vencimento</th><th class="text-end">Valor</th><th>Status</th><th>Dias Atraso</th><th></th></tr></thead>
+    <tbody>
+    {% for c in itens %}
+      <tr class="{{ 'linha-atrasada' if c.status=='Atrasado' else '' }}">
+        <td>{{ c.fornecedor }}<div class="small text-muted">{{ c.descricao }}</div></td>
+        <td>{{ c.categoria }}</td>
+        <td>{{ c.data_vencimento|brdate }}</td>
+        <td class="text-end">{{ c.valor|brl }}</td>
+        <td><span class="badge-pill {{ c.status|badgeclass }}">{{ c.status }}</span></td>
+        <td>{{ c.dias_atraso if c.dias_atraso else '' }}</td>
+        <td class="text-nowrap">
+          {% if c.status != 'Pago' %}
+          <form method="post" action="{{ url_for('pagar_marcar_pago', item_id=c.id) }}" class="d-inline">
+            <button class="btn btn-sm btn-outline-success">Marcar Pago</button>
+          </form>
+          {% endif %}
+          <form method="post" action="{{ url_for('pagar_excluir', item_id=c.id) }}" class="d-inline" onsubmit="return confirm('Excluir?');">
+            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+          </form>
+        </td>
+      </tr>
+    {% else %}
+      <tr><td colspan="7" class="text-muted">Nenhuma conta cadastrada.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

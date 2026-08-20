@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}DRE Gerencial{% endblock %}
+{% block page_title %}DRE Gerencial e Indicadores{% endblock %}
+{% block content %}
+
+<div class="card p-3 mb-4">
+  <h5 class="mb-3">Filtrar por Ano</h5>
+  <form method="get" class="row g-2 align-items-end" style="max-width:300px;">
+    <div class="col-8">
+      <label class="form-label">Ano</label>
+      <input type="number" class="form-control" name="ano" value="{{ ano }}">
+    </div>
+    <div class="col-4"><button class="btn btn-success w-100">Ver</button></div>
+  </form>
+</div>
+
+<div class="card p-3">
+  <h5 class="mb-3">DRE — {{ ano }} <span class="text-muted small fw-normal">Demonstrativo de Resultado do Exercicio Gerencial</span></h5>
+  <div class="table-responsive">
+  <table class="table table-sm table-bordered text-center align-middle">
+    <thead class="table-success">
+      <tr><th class="text-start">Mes</th><th>Receita Bruta</th><th>Receita Liquida</th><th>Lucro Bruto</th><th>Margem Bruta</th>
+          <th>Resultado Operacional</th><th>Resultado Liquido</th><th>Margem Liquida</th><th>Ponto Equilibrio</th><th></th></tr>
+    </thead>
+    <tbody>
+    {% for mes, d in linhas %}
+      <tr>
+        <td class="text-start">{{ meses_pt[mes] }}/{{ ano }}</td>
+        {% if d %}
+        <td>{{ d.receita_bruta|brl }}</td>
+        <td>{{ d.receita_liquida|brl }}</td>
+        <td>{{ d.lucro_bruto|brl }}</td>
+        <td>{{ d.margem_bruta|pct }}</td>
+        <td>{{ d.resultado_operacional|brl }}</td>
+        <td class="fw-bold {{ 'text-danger' if d.resultado_liquido < 0 else 'text-success' }}">{{ d.resultado_liquido|brl }}</td>
+        <td>{{ d.margem_liquida|pct }}</td>
+        <td>{{ d.ponto_equilibrio|brl }}</td>
+        {% else %}
+        <td colspan="8" class="text-muted">Sem dados lancados</td>
+        {% endif %}
+        <td><a href="{{ url_for('dre_editar', ano=ano, mes=mes) }}" class="btn btn-sm btn-outline-success">Editar</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+{% endblock %}

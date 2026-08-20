@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Fluxo de Caixa{% endblock %} - Supermercado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  :root {
+    --bg:#EEF2EE; --sidebar-bg:#1C3829; --card-bg:#FFFFFF; --card-radius:15px;
+    --card-shadow:0 1px 3px rgba(0,0,0,.1), 0 1px 2px -1px rgba(0,0,0,.1);
+    --text-main:#111B15; --text-muted:#5A7A65; --pill-bg:#F5F8F5; --border:rgba(28,71,49,.12);
+    --green-bg:#D1FAE5; --green-text:#2D6A4F; --amber-bg:#FEF3C7; --amber-text:#D97706;
+    --red-bg:#FEE2E2; --red-text:#C0392B;
+  }
+  * { font-family:'Plus Jakarta Sans', Arial, sans-serif; }
+  body { background:var(--bg); color:var(--text-main); margin:0; display:flex; min-height:100vh; }
+
+  .sidebar { width:256px; flex-shrink:0; background:var(--sidebar-bg); color:rgba(255,255,255,.85);
+    display:flex; flex-direction:column; position:sticky; top:0; height:100vh; z-index:30; }
+  .sidebar-brand { padding:1.4rem 1.25rem 1.1rem; display:flex; align-items:center; gap:.65rem; }
+  .sidebar-brand img { width:34px; height:34px; object-fit:contain; background:#fff; border-radius:8px; padding:3px; flex-shrink:0; }
+  .sidebar-brand .name { font-size:.85rem; font-weight:700; color:#fff; line-height:1.15; }
+  .sidebar-brand .sub { font-size:.68rem; color:rgba(255,255,255,.55); }
+  .sidebar nav { flex:1; padding:.5rem .75rem; display:flex; flex-direction:column; gap:2px; overflow-y:auto; }
+  .sidebar nav a { display:flex; align-items:center; gap:.65rem; padding:.6rem .75rem; border-radius:10px;
+    color:rgba(255,255,255,.72); text-decoration:none; font-size:.87rem; font-weight:500; transition:.15s; }
+  .sidebar nav a svg { width:17px; height:17px; flex-shrink:0; }
+  .sidebar nav a:hover { background:rgba(255,255,255,.08); color:#fff; }
+  .sidebar nav a.active { background:rgba(255,255,255,.14); color:#fff; }
+  .sidebar-divider { border-top:1px solid rgba(255,255,255,.1); margin:.5rem .75rem; }
+  .sidebar-footer { padding:.9rem .9rem 1.2rem; border-top:1px solid rgba(255,255,255,.1); }
+  .sidebar-user { display:flex; align-items:center; justify-content:space-between; }
+  .sidebar-user .who { font-size:.82rem; color:#fff; font-weight:600; }
+  .sidebar-user .role { font-size:.68rem; color:rgba(255,255,255,.5); }
+  .sidebar-user a { color:rgba(255,255,255,.6); }
+  .sidebar-user a:hover { color:#fff; }
+
+  .main-area { flex:1; min-width:0; display:flex; flex-direction:column; }
+  .topbar { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.85); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border); padding:.85rem 1.5rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+  .topbar h1 { font-size:1rem; font-weight:700; margin:0; color:var(--text-main); }
+  .topbar .subtitle { font-size:.72rem; color:var(--text-muted); margin:0; }
+  .search-pill { display:flex; align-items:center; gap:.5rem; background:var(--pill-bg); color:var(--text-muted);
+    border:1px solid var(--border); border-radius:10px; padding:.4rem .8rem; font-size:.82rem; }
+  .search-pill svg { width:14px; height:14px; }
+  .icon-btn { border:none; background:transparent; color:var(--text-muted); border-radius:10px; padding:.5rem; display:flex; }
+  .icon-btn:hover { background:var(--pill-bg); }
+  .content-wrap { padding:1.5rem; flex:1; }
+
+  .card { border:none !important; border-radius:var(--card-radius) !important; box-shadow:var(--card-shadow) !important; }
+  h3, h5 { font-weight:700; color:var(--text-main); }
+  .btn-success { background-color:var(--green-text) !important; border-color:var(--green-text) !important; }
+  .btn-outline-success { color:var(--green-text) !important; border-color:var(--green-text) !important; }
+  .btn-outline-success:hover { background-color:var(--green-text) !important; }
+  .btn, .form-control, .form-select { border-radius:10px; font-size:.88rem; }
+
+  .badge-pill { display:inline-flex; align-items:center; gap:.3rem; font-size:.7rem; font-weight:700;
+    padding:.2rem .6rem; border-radius:999px; white-space:nowrap; }
+  .badge-green { background:var(--green-bg); color:var(--green-text); }
+  .badge-amber { background:var(--amber-bg); color:var(--amber-text); }
+  .badge-red { background:var(--red-bg); color:var(--red-text); }
+  .status-Pago, .status-Recebido { color:var(--green-text); font-weight:600; }
+  .status-Atrasado { color:var(--red-text); font-weight:600; }
+  .status-EmAberto { color:var(--amber-text); font-weight:600; }
+  .card-kpi { border:none; }
+  .table-sm td, .table-sm th { vertical-align: middle; }
+  tr.linha-atrasada { background-color:#FEE2E2 !important; }
+  tr.linha-negativa td { color:var(--red-text); }
+  .app-footer { text-align:center; padding:1.5rem 1rem 1rem; color:#9AA79E; font-size:0.78rem; }
+
+  @media (max-width:991px) {
+    .sidebar { position:fixed; left:0; transform:translateX(-100%); transition:.25s; }
+    .sidebar.open { transform:translateX(0); }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <img src="{{ url_for('static', filename='logo-sasaki.png') }}" alt="Sasaki">
+    <div>
+      <div class="name">Fluxo de Caixa</div>
+      <div class="sub">Mercado</div>
+    </div>
+  </div>
+  <nav>
+    <a href="{{ url_for('dashboard') }}" class="{{ 'active' if request.endpoint=='dashboard' }}"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+    <a href="{{ url_for('movimento_list') }}" class="{{ 'active' if request.endpoint=='movimento_list' }}"><i data-lucide="arrow-left-right"></i> Movimento Diario</a>
+    <a href="{{ url_for('pagar_list') }}" class="{{ 'active' if request.endpoint=='pagar_list' }}"><i data-lucide="credit-card"></i> Contas a Pagar</a>
+    <a href="{{ url_for('receber_list') }}" class="{{ 'active' if request.endpoint=='receber_list' }}"><i data-lucide="wallet"></i> Contas a Receber</a>
+    <a href="{{ url_for('fluxo_projetado') }}" class="{{ 'active' if request.endpoint=='fluxo_projetado' }}"><i data-lucide="trending-up"></i> Fluxo Projetado</a>
+    <a href="{{ url_for('dre_list') }}" class="{{ 'active' if request.endpoint in ['dre_list','dre_editar'] }}"><i data-lucide="chart-column"></i> DRE Gerencial</a>
+    <div class="sidebar-divider"></div>
+    <a href="{{ url_for('exportar_excel') }}"><i data-lucide="download"></i> Exportar Excel</a>
+    <a href="{{ url_for('usuarios_list') }}" class="{{ 'active' if request.endpoint=='usuarios_list' }}"><i data-lucide="users"></i> Usuarios</a>
+    <a href="{{ url_for('config_view') }}" class="{{ 'active' if request.endpoint=='config_view' }}"><i data-lucide="settings"></i> Configuracoes</a>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div>
+        <div class="who">{{ session.usuario }}</div>
+        <div class="role">Usuario</div>
+      </div>
+      <a href="{{ url_for('logout') }}" title="Sair"><i data-lucide="log-out"></i></a>
+    </div>
+  </div>
+</aside>
+
+<div class="main-area">
+  <header class="topbar">
+    <button class="icon-btn d-lg-none" type="button" onclick="document.getElementById('sidebar').classList.toggle('open')">
+      <i data-lucide="menu"></i>
+    </button>
+    <div>
+      <h1>{% block page_title %}Fluxo de Caixa{% endblock %}</h1>
+      <p class="subtitle">{{ hoje_extenso if hoje_extenso else '' }}</p>
+    </div>
+    <div class="ms-auto d-flex align-items-center gap-2">
+      <div class="search-pill d-none d-sm-flex"><i data-lucide="search"></i> Buscar...</div>
+      <button class="icon-btn"><i data-lucide="bell"></i></button>
+    </div>
+  </header>
+
+  <div class="content-wrap">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ 'success' if category=='success' else 'danger' }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+    <div class="app-footer">Desenvolvido por Sasaki Solucoes Contabeis</div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  if (window.lucide) { lucide.createIcons(); }
+</script>
+</body>
+</html>

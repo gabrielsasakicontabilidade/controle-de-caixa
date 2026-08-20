@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Contas a Receber{% endblock %}
+{% block page_title %}Contas a Receber{% endblock %}
+{% block content %}
+
+<div class="card p-3 mb-4">
+  <h5>Nova Conta a Receber</h5>
+  <form method="post" class="row g-2 align-items-end">
+    <div class="col-md-2"><label class="form-label">Cliente / Bandeira</label><input type="text" class="form-control" name="cliente" required></div>
+    <div class="col-md-2"><label class="form-label">Descricao</label><input type="text" class="form-control" name="descricao"></div>
+    <div class="col-md-2">
+      <label class="form-label">Categoria</label>
+      <select class="form-select" name="categoria" required>
+        {% for c in categorias %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="col-md-2"><label class="form-label">Data Venda</label><input type="date" class="form-control" name="data_venda"></div>
+    <div class="col-md-2"><label class="form-label">Prev. Recebimento</label><input type="date" class="form-control" name="data_prevista" required></div>
+    <div class="col-md-1"><label class="form-label">Valor Bruto</label><input type="text" class="form-control" name="valor_bruto" placeholder="0,00" required></div>
+    <div class="col-md-1"><label class="form-label">Taxa %</label><input type="text" class="form-control" name="taxa_percentual" placeholder="0"></div>
+    <div class="col-md-12"><label class="form-label">Observacoes</label><input type="text" class="form-control" name="observacoes"></div>
+    <div class="col-md-2"><button type="submit" class="btn btn-success w-100">Adicionar</button></div>
+  </form>
+</div>
+
+<div class="row g-3 mb-3">
+  <div class="col-md-4"><div class="card p-3"><div class="text-muted small">Total em Aberto</div><div class="fs-5 fw-bold">{{ total_aberto|brl }}</div></div></div>
+  <div class="col-md-4"><div class="card p-3"><div class="text-muted small">Total Atrasado</div><div class="fs-5 fw-bold text-danger">{{ total_atrasado|brl }}</div></div></div>
+  <div class="col-md-4"><div class="card p-3"><div class="text-muted small">Total Recebido</div><div class="fs-5 fw-bold text-success">{{ total_recebido|brl }}</div></div></div>
+</div>
+
+<div class="card p-3">
+  <table class="table table-sm table-hover">
+    <thead><tr><th>Cliente</th><th>Categoria</th><th>Prev. Receb.</th><th class="text-end">Valor Bruto</th><th class="text-end">Taxa</th><th class="text-end">Valor Liquido</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for c in itens %}
+      <tr class="{{ 'linha-atrasada' if c.status=='Atrasado' else '' }}">
+        <td>{{ c.cliente }}<div class="small text-muted">{{ c.descricao }}</div></td>
+        <td>{{ c.categoria }}</td>
+        <td>{{ c.data_prevista|brdate }}</td>
+        <td class="text-end">{{ c.valor_bruto|brl }}</td>
+        <td class="text-end">{{ c.taxa_percentual|pct }}</td>
+        <td class="text-end fw-bold">{{ c.valor_liquido|brl }}</td>
+        <td><span class="badge-pill {{ c.status|badgeclass }}">{{ c.status }}</span></td>
+        <td class="text-nowrap">
+          {% if c.status != 'Recebido' %}
+          <form method="post" action="{{ url_for('receber_marcar_recebido', item_id=c.id) }}" class="d-inline">
+            <button class="btn btn-sm btn-outline-success">Marcar Recebido</button>
+          </form>
+          {% endif %}
+          <form method="post" action="{{ url_for('receber_excluir', item_id=c.id) }}" class="d-inline" onsubmit="return confirm('Excluir?');">
+            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+          </form>
+        </td>
+      </tr>
+    {% else %}
+      <tr><td colspan="8" class="text-muted">Nenhuma conta cadastrada.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

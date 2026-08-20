@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Usuarios{% endblock %}
+{% block page_title %}Usuarios do Sistema{% endblock %}
+{% block content %}
+
+<div class="card p-3 mb-4">
+  <h5>Novo Usuario</h5>
+  <form method="post" class="row g-2 align-items-end">
+    <div class="col-md-4">
+      <label class="form-label">Usuario (login)</label>
+      <input type="text" class="form-control" name="username" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Senha</label>
+      <input type="text" class="form-control" name="senha" required>
+    </div>
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-success w-100">Criar Usuario</button>
+    </div>
+  </form>
+</div>
+
+<div class="card p-3">
+  <table class="table table-sm table-hover">
+    <thead><tr><th>Usuario</th><th>Criado em</th><th></th></tr></thead>
+    <tbody>
+    {% for u in itens %}
+      <tr>
+        <td>{{ u.username }}{{ ' (voce)' if u.username == session.usuario else '' }}</td>
+        <td>{{ u.criado_em.strftime('%d/%m/%Y') if u.criado_em else '' }}</td>
+        <td class="text-nowrap">
+          <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#redef-{{ u.id }}">
+            Redefinir Senha
+          </button>
+          <form method="post" action="{{ url_for('usuarios_excluir', item_id=u.id) }}" class="d-inline" onsubmit="return confirm('Excluir este usuario?');">
+            <button class="btn btn-sm btn-outline-danger" {{ 'disabled' if u.username == session.usuario else '' }}>Excluir</button>
+          </form>
+          <div class="collapse mt-2" id="redef-{{ u.id }}">
+            <form method="post" action="{{ url_for('usuarios_redefinir_senha', item_id=u.id) }}" class="d-flex gap-2">
+              <input type="text" class="form-control form-control-sm" name="nova_senha" placeholder="Nova senha" required>
+              <button type="submit" class="btn btn-sm btn-success">Salvar</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+    {% else %}
+      <tr><td colspan="3" class="text-muted">Nenhum usuario cadastrado.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+# Python
+sistema/__pycache__/
+sistema/**/__pycache__/
+*.pyc
+
+# Local database (dev only - production uses Postgres/Neon)
+sistema/caixa.db
+
+# Vercel local linking (contains project id, not needed in repo)
+sistema/.vercel
+.vercel
+
+# Environment / secrets
+.env
+.env.*.local
+*.env
+
+# Excel lock files
+~$*.xlsx
+
+# OS
+Thumbs.db
+.DS_Store

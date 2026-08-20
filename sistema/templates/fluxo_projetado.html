@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Fluxo de Caixa Projetado{% endblock %}
+{% block page_title %}Fluxo de Caixa Projetado{% endblock %}
+{% block content %}
+<div class="card p-3 mb-4">
+  <h5 class="mb-3">Cenarios de Projecao</h5>
+<form method="get" class="row g-2 align-items-end" style="max-width:500px;">
+  <div class="col-md-5">
+    <label class="form-label">Variacao Otimista (%)</label>
+    <input type="number" class="form-control" name="otimista" value="{{ otimista }}">
+  </div>
+  <div class="col-md-5">
+    <label class="form-label">Variacao Pessimista (%)</label>
+    <input type="number" class="form-control" name="pessimista" value="{{ pessimista }}">
+  </div>
+  <div class="col-md-2"><button class="btn btn-success w-100">Aplicar</button></div>
+</form>
+</div>
+
+<div class="card p-3">
+  <h5 class="mb-3">Projecao — 12 Meses</h5>
+  <div class="table-responsive">
+  <table class="table table-sm table-bordered text-center align-middle">
+    <thead class="table-success">
+      <tr><th class="text-start">Mes</th>{% for col in colunas %}<th>{{ col.label }}</th>{% endfor %}</tr>
+    </thead>
+    <tbody>
+      <tr><td class="text-start">Saldo Inicial</td>{% for col in colunas %}<td>{{ col.saldo_inicial|brl }}</td>{% endfor %}</tr>
+      <tr><td class="text-start">(+) Entradas Previstas</td>{% for col in colunas %}<td class="text-success">{{ col.entradas|brl }}</td>{% endfor %}</tr>
+      <tr><td class="text-start">(-) Saidas Previstas</td>{% for col in colunas %}<td class="text-danger">{{ col.saidas|brl }}</td>{% endfor %}</tr>
+      <tr class="table-light fw-bold"><td class="text-start">= Saldo Final</td>{% for col in colunas %}<td class="{{ 'text-danger' if col.saldo_final < 0 else '' }}">{{ col.saldo_final|brl }}</td>{% endfor %}</tr>
+      <tr><td class="text-start">Saldo Final Otimista</td>{% for col in colunas %}<td>{{ col.saldo_otimista|brl }}</td>{% endfor %}</tr>
+      <tr><td class="text-start">Saldo Final Pessimista</td>{% for col in colunas %}<td class="{{ 'text-danger' if col.saldo_pessimista < 0 else '' }}">{{ col.saldo_pessimista|brl }}</td>{% endfor %}</tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="text-muted small mb-0">
+    Entradas previstas = recebiveis cadastrados em Contas a Receber com data prevista no mes. Saidas previstas = contas cadastradas em Contas a Pagar com vencimento no mes.
+    Os cenarios aplicam a variacao percentual sobre o total de entradas de cada mes, somada ao saldo final realista.
+  </p>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fluxo-caixa-sistema",
+      "runtimeExecutable": "py",
+      "runtimeArgs": ["sistema/app.py"],
+      "port": 8000
+    }
+  ]
+}
