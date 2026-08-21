@@ -312,12 +312,22 @@ def pagar_list():
     )
 
 
+CATEGORIA_MOVIMENTO_SAIDA_POR_PAGAR = {
+    "Mercadorias/Fornecedores": "Pagamento Fornecedor",
+}
+
+
 @app.route("/contas-a-pagar/<int:item_id>/pagar", methods=["POST"])
 def pagar_marcar_pago(item_id):
     c = ContaPagar.query.get_or_404(item_id)
     c.data_pagamento = date.today()
+    categoria_mov = CATEGORIA_MOVIMENTO_SAIDA_POR_PAGAR.get(c.categoria, "Despesa Operacional")
+    descricao = f"Pagamento: {c.fornecedor}" + (f" - {c.descricao}" if c.descricao else "")
+    db.session.add(MovimentoCaixa(
+        data=c.data_pagamento, descricao=descricao, categoria=categoria_mov, valor=c.valor,
+    ))
     db.session.commit()
-    flash(f"Conta de {c.fornecedor} marcada como paga.", "success")
+    flash(f"Conta de {c.fornecedor} marcada como paga e lancada no Movimento de Caixa.", "success")
     return redirect(url_for("pagar_list"))
 
 
@@ -365,12 +375,23 @@ def receber_list():
     )
 
 
+CATEGORIA_MOVIMENTO_ENTRADA_POR_RECEBER = {
+    "Cartao de Credito": "Venda Cartao Credito",
+    "Cartao de Debito": "Venda Cartao Debito",
+}
+
+
 @app.route("/contas-a-receber/<int:item_id>/receber", methods=["POST"])
 def receber_marcar_recebido(item_id):
     c = ContaReceber.query.get_or_404(item_id)
     c.data_recebimento = date.today()
+    categoria_mov = CATEGORIA_MOVIMENTO_ENTRADA_POR_RECEBER.get(c.categoria, "Outras Entradas")
+    descricao = f"Recebimento: {c.cliente}" + (f" - {c.descricao}" if c.descricao else "")
+    db.session.add(MovimentoCaixa(
+        data=c.data_recebimento, descricao=descricao, categoria=categoria_mov, valor=c.valor_liquido,
+    ))
     db.session.commit()
-    flash(f"Recebimento de {c.cliente} confirmado.", "success")
+    flash(f"Recebimento de {c.cliente} confirmado e lancado no Movimento de Caixa.", "success")
     return redirect(url_for("receber_list"))
 
 
