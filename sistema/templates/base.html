@@ -96,8 +96,10 @@
     <a href="{{ url_for('dre_list') }}" class="{{ 'active' if request.endpoint in ['dre_list','dre_editar'] }}"><i data-lucide="chart-column"></i> DRE Gerencial</a>
     <div class="sidebar-divider"></div>
     <a href="{{ url_for('exportar_excel') }}"><i data-lucide="download"></i> Exportar Excel</a>
+    {% if session.admin %}
     <a href="{{ url_for('usuarios_list') }}" class="{{ 'active' if request.endpoint=='usuarios_list' }}"><i data-lucide="users"></i> Usuarios</a>
     <a href="{{ url_for('config_view') }}" class="{{ 'active' if request.endpoint=='config_view' }}"><i data-lucide="settings"></i> Configuracoes</a>
+    {% endif %}
   </nav>
   <div class="sidebar-footer">
     <div class="sidebar-user">
@@ -105,7 +107,7 @@
         <img src="{{ url_for('static', filename='logo-sasaki.png') }}" alt="Sasaki" class="sidebar-user-logo">
         <div>
           <div class="who">{{ session.usuario }}</div>
-          <div class="role">Usuario</div>
+          <div class="role">{{ 'Administrador' if session.admin else 'Usuario' }}</div>
         </div>
       </div>
       <a href="{{ url_for('logout') }}" title="Sair"><i data-lucide="log-out"></i></a>

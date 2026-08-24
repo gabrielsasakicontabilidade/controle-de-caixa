@@ -51,6 +51,7 @@ class Usuario(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
     ativo = db.Column(db.Boolean, default=True)
+    admin = db.Column(db.Boolean, default=False)
     criado_em = db.Column(db.DateTime, default=datetime.utcnow)
 
 

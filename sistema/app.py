@@ -55,6 +55,18 @@ def login_required(view_fn):
     return wrapped
 
 
+def admin_required(view_fn):
+    @wraps(view_fn)
+    def wrapped(*args, **kwargs):
+        if not session.get("logado"):
+            return redirect(url_for("login", next=request.path))
+        if not session.get("admin"):
+            flash("Apenas administradores podem acessar esta pagina.", "danger")
+            return redirect(url_for("dashboard"))
+        return view_fn(*args, **kwargs)
+    return wrapped
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -64,6 +76,7 @@ def login():
         if u and check_password_hash(u.password_hash, senha):
             session["logado"] = True
             session["usuario"] = u.username
+            session["admin"] = bool(u.admin)
             destino = request.args.get("next") or url_for("dashboard")
             return redirect(destino)
         flash("Usuario ou senha invalidos.", "danger")
@@ -213,6 +226,7 @@ def dashboard():
 
 
 @app.route("/config", methods=["GET", "POST"])
+@admin_required
 def config_view():
     cfg = get_config()
     if request.method == "POST":
@@ -574,16 +588,18 @@ def exportar_excel():
 
 # ------------------------------------------------------------------- Usuarios
 @app.route("/usuarios", methods=["GET", "POST"])
+@admin_required
 def usuarios_list():
     if request.method == "POST":
         username = request.form.get("username", "").strip()
         senha = request.form.get("senha", "")
+        is_admin = request.form.get("admin") == "on"
         if not username or not senha:
             flash("Usuario e senha sao obrigatorios.", "danger")
         elif Usuario.query.filter_by(username=username).first():
             flash("Ja existe um usuario com esse nome.", "danger")
         else:
-            u = Usuario(username=username, password_hash=generate_password_hash(senha), ativo=True)
+            u = Usuario(username=username, password_hash=generate_password_hash(senha), ativo=True, admin=is_admin)
             db.session.add(u)
             db.session.commit()
             flash(f"Usuario '{username}' criado.", "success")
@@ -594,6 +610,7 @@ def usuarios_list():
 
 
 @app.route("/usuarios/<int:item_id>/excluir", methods=["POST"])
+@admin_required
 def usuarios_excluir(item_id):
     u = Usuario.query.get_or_404(item_id)
     if u.username == session.get("usuario"):
@@ -606,6 +623,7 @@ def usuarios_excluir(item_id):
 
 
 @app.route("/usuarios/<int:item_id>/redefinir-senha", methods=["POST"])
+@admin_required
 def usuarios_redefinir_senha(item_id):
     u = Usuario.query.get_or_404(item_id)
     nova_senha = request.form.get("nova_senha", "")
@@ -624,8 +642,19 @@ def _seed_admin_inicial():
             username=APP_USERNAME,
             password_hash=generate_password_hash(APP_PASSWORD),
             ativo=True,
+            admin=True,
         ))
         db.session.commit()
+
+
+def _promover_admin_inicial():
+    """Garante que exista pelo menos um administrador. Cobre a migracao: usuarios
+    criados antes da coluna 'admin' existir ficam com admin=False por padrao."""
+    if Usuario.query.filter_by(admin=True).count() == 0:
+        primeiro = Usuario.query.order_by(Usuario.id.asc()).first()
+        if primeiro:
+            primeiro.admin = True
+            db.session.commit()
 
 
 def _ensure_column(table_name, column_name, column_type_sql):
@@ -645,7 +674,9 @@ with app.app_context():
     db.create_all()
     _ensure_column("conta_pagar", "movimento_id", "INTEGER")
     _ensure_column("conta_receber", "movimento_id", "INTEGER")
+    _ensure_column("usuario", "admin", "BOOLEAN DEFAULT FALSE")
     _seed_admin_inicial()
+    _promover_admin_inicial()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=False)
