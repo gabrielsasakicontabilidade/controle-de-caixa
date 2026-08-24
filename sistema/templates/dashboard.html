@@ -4,18 +4,19 @@
 {% block content %}
 <div class="row g-3 mb-4">
   <div class="col-md-3">
-    <div class="card card-kpi p-3">
+    <div class="card card-kpi p-3 h-100 d-flex flex-column">
       <div class="d-flex justify-content-between align-items-start mb-1">
-        <div class="text-muted small">Saldo Atual de Caixa</div>
+        <div class="text-muted small kpi-label">Saldo Atual de Caixa</div>
         <span class="badge-pill {{ 'badge-green' if saldo >= 0 else 'badge-red' }}">{{ 'Alta' if saldo >= 0 else 'Baixo' }}</span>
       </div>
       <div class="fs-4 fw-bold {{ 'text-danger' if saldo < 0 else '' }}" style="color:{{ '' if saldo < 0 else '#111B15' }}">{{ saldo|brl }}</div>
+      <div class="small">&nbsp;</div>
     </div>
   </div>
   <div class="col-md-3">
-    <div class="card card-kpi p-3">
+    <div class="card card-kpi p-3 h-100 d-flex flex-column">
       <div class="d-flex justify-content-between align-items-start mb-1">
-        <div class="text-muted small">Contas a Pagar (em aberto)</div>
+        <div class="text-muted small kpi-label">Contas a Pagar (em aberto)</div>
         <span class="badge-pill {{ 'badge-amber' if total_pagar_atrasado > 0 else 'badge-green' }}">{{ 'Pendente' if total_pagar_atrasado > 0 else 'Em dia' }}</span>
       </div>
       <div class="fs-4 fw-bold">{{ total_pagar_aberto|brl }}</div>
@@ -23,9 +24,9 @@
     </div>
   </div>
   <div class="col-md-3">
-    <div class="card card-kpi p-3">
+    <div class="card card-kpi p-3 h-100 d-flex flex-column">
       <div class="d-flex justify-content-between align-items-start mb-1">
-        <div class="text-muted small">Contas a Receber (em aberto)</div>
+        <div class="text-muted small kpi-label">Contas a Receber (em aberto)</div>
         <span class="badge-pill badge-green">Alta</span>
       </div>
       <div class="fs-4 fw-bold">{{ total_receber_aberto|brl }}</div>
@@ -33,9 +34,9 @@
     </div>
   </div>
   <div class="col-md-3">
-    <div class="card card-kpi p-3">
+    <div class="card card-kpi p-3 h-100 d-flex flex-column">
       <div class="d-flex justify-content-between align-items-start mb-1">
-        <div class="text-muted small">Vencendo nos proximos 7 dias</div>
+        <div class="text-muted small kpi-label">Vencendo nos proximos 7 dias</div>
         <span class="badge-pill {{ 'badge-amber' if vencendo|length > 0 else 'badge-green' }}">{{ 'Atencao' if vencendo|length > 0 else 'Tranquilo' }}</span>
       </div>
       <div class="fs-4 fw-bold">{{ vencendo|length }} contas</div>
