@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
-from datetime import date, datetime
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
+
+FUSO_BRASIL = ZoneInfo("America/Sao_Paulo")
+
+
+def hoje_brasil():
+    """Data atual no fuso de Brasilia. O servidor roda em UTC, entao usar
+    date.today() diretamente pode adiantar o dia em ate 3 horas."""
+    return datetime.now(FUSO_BRASIL).date()
 
 CATEGORIAS_ENTRADA = [
     "Venda Dinheiro",
@@ -34,7 +43,7 @@ MESES_PT = ["", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "
 class Config(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     saldo_inicial = db.Column(db.Float, default=0.0)
-    data_inicial = db.Column(db.Date, default=date.today)
+    data_inicial = db.Column(db.Date, default=hoje_brasil)
 
 
 class Usuario(db.Model):
@@ -47,7 +56,7 @@ class Usuario(db.Model):
 
 class MovimentoCaixa(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.Date, nullable=False, default=date.today)
+    data = db.Column(db.Date, nullable=False, default=hoje_brasil)
     descricao = db.Column(db.String(200), nullable=False)
     categoria = db.Column(db.String(50), nullable=False)
     valor = db.Column(db.Float, nullable=False)
@@ -75,20 +84,21 @@ class ContaPagar(db.Model):
     valor = db.Column(db.Float, nullable=False)
     data_pagamento = db.Column(db.Date, nullable=True)
     observacoes = db.Column(db.String(300))
+    movimento_id = db.Column(db.Integer, db.ForeignKey("movimento_caixa.id"), nullable=True)
 
     @property
     def status(self):
         if self.data_pagamento:
             return "Pago"
-        if self.data_vencimento < date.today():
+        if self.data_vencimento < hoje_brasil():
             return "Atrasado"
         return "Em Aberto"
 
     @property
     def dias_atraso(self):
-        if self.data_pagamento or self.data_vencimento >= date.today():
+        if self.data_pagamento or self.data_vencimento >= hoje_brasil():
             return 0
-        return (date.today() - self.data_vencimento).days
+        return (hoje_brasil() - self.data_vencimento).days
 
 
 class ContaReceber(db.Model):
@@ -102,6 +112,7 @@ class ContaReceber(db.Model):
     taxa_percentual = db.Column(db.Float, default=0.0)
     data_recebimento = db.Column(db.Date, nullable=True)
     observacoes = db.Column(db.String(300))
+    movimento_id = db.Column(db.Integer, db.ForeignKey("movimento_caixa.id"), nullable=True)
 
     @property
     def valor_liquido(self):
@@ -111,15 +122,15 @@ class ContaReceber(db.Model):
     def status(self):
         if self.data_recebimento:
             return "Recebido"
-        if self.data_prevista < date.today():
+        if self.data_prevista < hoje_brasil():
             return "Atrasado"
         return "Em Aberto"
 
     @property
     def dias_atraso(self):
-        if self.data_recebimento or self.data_prevista >= date.today():
+        if self.data_recebimento or self.data_prevista >= hoje_brasil():
             return 0
-        return (date.today() - self.data_prevista).days
+        return (hoje_brasil() - self.data_prevista).days
 
 
 class DreMensal(db.Model):

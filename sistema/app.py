@@ -13,7 +13,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from models import (
     db, Config, MovimentoCaixa, ContaPagar, ContaReceber, DreMensal, Usuario,
     CATEGORIAS_MOVIMENTO, CATEGORIAS_ENTRADA, CATEGORIAS_PAGAR, CATEGORIAS_RECEBER,
-    MESES_PT,
+    MESES_PT, hoje_brasil,
 )
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -42,7 +42,7 @@ MESES_EXT_PT = ["", "janeiro", "fevereiro", "marco", "abril", "maio", "junho", "
 
 @app.context_processor
 def inject_hoje_extenso():
-    hoje = date.today()
+    hoje = hoje_brasil()
     return {"hoje_extenso": f"{DIAS_PT[hoje.weekday()]}, {hoje.day} de {MESES_EXT_PT[hoje.month]} de {hoje.year}"}
 
 
@@ -133,7 +133,7 @@ def parse_date(value):
     return datetime.strptime(value, "%Y-%m-%d").date()
 
 
-def parse_valor(value):
+def parse_valor(value, allow_negative=False):
     """Aceita '15000', '15000.50', '15000,50', '15.000,00', 'R$ 15.000,00', '2,5%' etc."""
     if value is None:
         raise ValueError("Valor vazio.")
@@ -147,7 +147,10 @@ def parse_valor(value):
         s = s.replace(".", "").replace(",", ".")
     if not re.fullmatch(r"-?\d+(\.\d+)?", s):
         raise ValueError(f"Valor invalido: '{value}'.")
-    return float(s)
+    resultado = float(s)
+    if resultado < 0 and not allow_negative:
+        raise ValueError(f"Valor nao pode ser negativo: '{value}'.")
+    return resultado
 
 
 def add_months(year, month, n):
@@ -165,7 +168,7 @@ def month_range(year, month):
 def get_config():
     cfg = Config.query.first()
     if not cfg:
-        cfg = Config(saldo_inicial=0.0, data_inicial=date.today())
+        cfg = Config(saldo_inicial=0.0, data_inicial=hoje_brasil())
         db.session.add(cfg)
         db.session.commit()
     return cfg
@@ -181,7 +184,7 @@ def saldo_atual():
 # ---------------------------------------------------------------- Dashboard
 @app.route("/")
 def dashboard():
-    hoje = date.today()
+    hoje = hoje_brasil()
     pagar_aberto = ContaPagar.query.filter(ContaPagar.data_pagamento.is_(None)).all()
     receber_aberto = ContaReceber.query.filter(ContaReceber.data_recebimento.is_(None)).all()
 
@@ -235,7 +238,7 @@ def movimento_list():
             flash(str(e), "danger")
             return redirect(url_for("movimento_list"))
         m = MovimentoCaixa(
-            data=parse_date(request.form["data"]) or date.today(),
+            data=parse_date(request.form["data"]) or hoje_brasil(),
             descricao=request.form["descricao"],
             categoria=request.form["categoria"],
             valor=valor,
@@ -266,7 +269,7 @@ def movimento_list():
         total_entradas=total_entradas,
         total_saidas=total_saidas,
         saldo_periodo=total_entradas - total_saidas,
-        hoje=date.today().isoformat(),
+        hoje=hoje_brasil().isoformat(),
     )
 
 
@@ -320,12 +323,16 @@ CATEGORIA_MOVIMENTO_SAIDA_POR_PAGAR = {
 @app.route("/contas-a-pagar/<int:item_id>/pagar", methods=["POST"])
 def pagar_marcar_pago(item_id):
     c = ContaPagar.query.get_or_404(item_id)
-    c.data_pagamento = date.today()
+    if c.data_pagamento:
+        flash(f"Conta de {c.fornecedor} ja estava marcada como paga.", "danger")
+        return redirect(url_for("pagar_list"))
+    c.data_pagamento = hoje_brasil()
     categoria_mov = CATEGORIA_MOVIMENTO_SAIDA_POR_PAGAR.get(c.categoria, "Despesa Operacional")
     descricao = f"Pagamento: {c.fornecedor}" + (f" - {c.descricao}" if c.descricao else "")
-    db.session.add(MovimentoCaixa(
-        data=c.data_pagamento, descricao=descricao, categoria=categoria_mov, valor=c.valor,
-    ))
+    mov = MovimentoCaixa(data=c.data_pagamento, descricao=descricao, categoria=categoria_mov, valor=c.valor)
+    db.session.add(mov)
+    db.session.flush()
+    c.movimento_id = mov.id
     db.session.commit()
     flash(f"Conta de {c.fornecedor} marcada como paga e lancada no Movimento de Caixa.", "success")
     return redirect(url_for("pagar_list"))
@@ -334,9 +341,13 @@ def pagar_marcar_pago(item_id):
 @app.route("/contas-a-pagar/<int:item_id>/excluir", methods=["POST"])
 def pagar_excluir(item_id):
     c = ContaPagar.query.get_or_404(item_id)
+    if c.movimento_id:
+        mov = MovimentoCaixa.query.get(c.movimento_id)
+        if mov:
+            db.session.delete(mov)
     db.session.delete(c)
     db.session.commit()
-    flash("Conta a pagar removida.", "success")
+    flash("Conta a pagar removida (e o lancamento de caixa vinculado, se havia).", "success")
     return redirect(url_for("pagar_list"))
 
 
@@ -384,12 +395,16 @@ CATEGORIA_MOVIMENTO_ENTRADA_POR_RECEBER = {
 @app.route("/contas-a-receber/<int:item_id>/receber", methods=["POST"])
 def receber_marcar_recebido(item_id):
     c = ContaReceber.query.get_or_404(item_id)
-    c.data_recebimento = date.today()
+    if c.data_recebimento:
+        flash(f"Recebimento de {c.cliente} ja estava confirmado.", "danger")
+        return redirect(url_for("receber_list"))
+    c.data_recebimento = hoje_brasil()
     categoria_mov = CATEGORIA_MOVIMENTO_ENTRADA_POR_RECEBER.get(c.categoria, "Outras Entradas")
     descricao = f"Recebimento: {c.cliente}" + (f" - {c.descricao}" if c.descricao else "")
-    db.session.add(MovimentoCaixa(
-        data=c.data_recebimento, descricao=descricao, categoria=categoria_mov, valor=c.valor_liquido,
-    ))
+    mov = MovimentoCaixa(data=c.data_recebimento, descricao=descricao, categoria=categoria_mov, valor=c.valor_liquido)
+    db.session.add(mov)
+    db.session.flush()
+    c.movimento_id = mov.id
     db.session.commit()
     flash(f"Recebimento de {c.cliente} confirmado e lancado no Movimento de Caixa.", "success")
     return redirect(url_for("receber_list"))
@@ -398,9 +413,13 @@ def receber_marcar_recebido(item_id):
 @app.route("/contas-a-receber/<int:item_id>/excluir", methods=["POST"])
 def receber_excluir(item_id):
     c = ContaReceber.query.get_or_404(item_id)
+    if c.movimento_id:
+        mov = MovimentoCaixa.query.get(c.movimento_id)
+        if mov:
+            db.session.delete(mov)
     db.session.delete(c)
     db.session.commit()
-    flash("Conta a receber removida.", "success")
+    flash("Conta a receber removida (e o lancamento de caixa vinculado, se havia).", "success")
     return redirect(url_for("receber_list"))
 
 
@@ -408,15 +427,15 @@ def receber_excluir(item_id):
 @app.route("/fluxo-projetado")
 def fluxo_projetado():
     try:
-        otimista = parse_valor(request.args.get("otimista", 10)) / 100.0
+        otimista = parse_valor(request.args.get("otimista", 10), allow_negative=True) / 100.0
     except ValueError:
         otimista = 0.10
     try:
-        pessimista = parse_valor(request.args.get("pessimista", -10)) / 100.0
+        pessimista = parse_valor(request.args.get("pessimista", -10), allow_negative=True) / 100.0
     except ValueError:
         pessimista = -0.10
 
-    hoje = date.today()
+    hoje = hoje_brasil()
     meses = []
     y, m = hoje.year, hoje.month
     for i in range(12):
@@ -453,7 +472,7 @@ def fluxo_projetado():
 # ------------------------------------------------------------- DRE Gerencial
 @app.route("/dre")
 def dre_list():
-    ano = int(request.args.get("ano", date.today().year))
+    ano = int(request.args.get("ano", hoje_brasil().year))
     linhas = []
     for mes in range(1, 13):
         d = DreMensal.query.filter_by(ano=ano, mes=mes).first()
@@ -548,7 +567,7 @@ def exportar_excel():
     buf = io.BytesIO()
     wb.save(buf)
     buf.seek(0)
-    filename = f"Fluxo_Caixa_Exportado_{date.today().strftime('%Y%m%d')}.xlsx"
+    filename = f"Fluxo_Caixa_Exportado_{hoje_brasil().strftime('%Y%m%d')}.xlsx"
     return send_file(buf, as_attachment=True, download_name=filename,
                       mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
@@ -609,8 +628,23 @@ def _seed_admin_inicial():
         db.session.commit()
 
 
+def _ensure_column(table_name, column_name, column_type_sql):
+    """db.create_all() so cria tabelas novas, nao adiciona colunas em tabelas
+    ja existentes. Isso cobre a migracao leve das colunas adicionadas depois."""
+    from sqlalchemy import inspect, text
+    inspector = inspect(db.engine)
+    if table_name not in inspector.get_table_names():
+        return
+    colunas = [c["name"] for c in inspector.get_columns(table_name)]
+    if column_name not in colunas:
+        with db.engine.begin() as conn:
+            conn.execute(text(f"ALTER TABLE {table_name} ADD COLUMN {column_name} {column_type_sql}"))
+
+
 with app.app_context():
     db.create_all()
+    _ensure_column("conta_pagar", "movimento_id", "INTEGER")
+    _ensure_column("conta_receber", "movimento_id", "INTEGER")
     _seed_admin_inicial()
 
 if __name__ == "__main__":

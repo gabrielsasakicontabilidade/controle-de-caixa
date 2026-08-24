@@ -44,7 +44,7 @@
         <td><span class="badge-pill {{ c.status|badgeclass }}">{{ c.status }}</span></td>
         <td class="text-nowrap">
           {% if c.status != 'Recebido' %}
-          <form method="post" action="{{ url_for('receber_marcar_recebido', item_id=c.id) }}" class="d-inline">
+          <form method="post" action="{{ url_for('receber_marcar_recebido', item_id=c.id) }}" class="d-inline" onsubmit="return confirm('Confirmar este recebimento? Isso vai lancar automaticamente no Movimento de Caixa.');">
             <button class="btn btn-sm btn-outline-success">Marcar Recebido</button>
           </form>
           {% endif %}

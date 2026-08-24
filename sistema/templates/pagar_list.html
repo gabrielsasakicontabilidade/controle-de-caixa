@@ -42,7 +42,7 @@
         <td>{{ c.dias_atraso if c.dias_atraso else '' }}</td>
         <td class="text-nowrap">
           {% if c.status != 'Pago' %}
-          <form method="post" action="{{ url_for('pagar_marcar_pago', item_id=c.id) }}" class="d-inline">
+          <form method="post" action="{{ url_for('pagar_marcar_pago', item_id=c.id) }}" class="d-inline" onsubmit="return confirm('Confirmar este pagamento? Isso vai lancar automaticamente no Movimento de Caixa.');">
             <button class="btn btn-sm btn-outline-success">Marcar Pago</button>
           </form>
           {% endif %}
