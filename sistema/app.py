@@ -636,6 +636,71 @@ def usuarios_redefinir_senha(item_id):
     return redirect(url_for("usuarios_list"))
 
 
+@app.route("/admin/importar-dados-temp", methods=["GET", "POST"])
+@admin_required
+def importar_dados_temp():
+    import json as _json
+
+    marcador = "Importado do relatorio de contas"
+    ja_importado = (
+        ContaPagar.query.filter(ContaPagar.observacoes.like(f"{marcador}%")).first()
+        or ContaReceber.query.filter(ContaReceber.observacoes.like(f"{marcador}%")).first()
+    )
+
+    if request.method == "POST":
+        if ja_importado:
+            flash("Os dados ja foram importados anteriormente. Nada foi feito.", "danger")
+            return redirect(url_for("importar_dados_temp"))
+
+        caminho_pagar = os.path.join(BASE_DIR, "data_import", "contas_pagar_import.json")
+        caminho_receber = os.path.join(BASE_DIR, "data_import", "contas_receber_import.json")
+
+        with open(caminho_pagar, encoding="utf-8") as f:
+            itens_pagar = _json.load(f)
+        with open(caminho_receber, encoding="utf-8") as f:
+            itens_receber = _json.load(f)
+
+        for it in itens_pagar:
+            db.session.add(ContaPagar(
+                fornecedor=it["fornecedor"],
+                descricao=it["descricao"],
+                categoria=it["categoria"],
+                data_emissao=datetime.strptime(it["data_emissao"], "%Y-%m-%d").date(),
+                data_vencimento=datetime.strptime(it["data_vencimento"], "%Y-%m-%d").date(),
+                valor=it["valor"],
+                observacoes=it["observacoes"],
+            ))
+
+        for it in itens_receber:
+            db.session.add(ContaReceber(
+                cliente=it["cliente"],
+                descricao=it["descricao"],
+                categoria=it["categoria"],
+                data_venda=datetime.strptime(it["data_venda"], "%Y-%m-%d").date(),
+                data_prevista=datetime.strptime(it["data_prevista"], "%Y-%m-%d").date(),
+                valor_bruto=it["valor_bruto"],
+                taxa_percentual=it["taxa_percentual"],
+                observacoes=it["observacoes"],
+            ))
+
+        db.session.commit()
+        flash(f"Importacao concluida: {len(itens_pagar)} contas a pagar e {len(itens_receber)} contas a receber.", "success")
+        return redirect(url_for("importar_dados_temp"))
+
+    total_pagar_atual = ContaPagar.query.count()
+    total_receber_atual = ContaReceber.query.count()
+    return f"""
+    <html><body style="font-family:sans-serif; max-width:600px; margin:40px auto;">
+    <h3>Importar dados dos relatorios PDF</h3>
+    <p>Contas a Pagar cadastradas atualmente: {total_pagar_atual}</p>
+    <p>Contas a Receber cadastradas atualmente: {total_receber_atual}</p>
+    <p>Status: {'<strong style="color:red">JA IMPORTADO ANTERIORMENTE</strong>' if ja_importado else 'Pronto para importar'}</p>
+    <form method="post"><button type="submit" {'disabled' if ja_importado else ''}
+      style="padding:10px 20px; font-size:16px;">Importar 168 Contas a Pagar + 1374 Contas a Receber</button></form>
+    </body></html>
+    """
+
+
 def _seed_admin_inicial():
     if Usuario.query.count() == 0:
         db.session.add(Usuario(
