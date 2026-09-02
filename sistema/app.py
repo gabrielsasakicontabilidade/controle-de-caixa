@@ -319,12 +319,23 @@ def pagar_list():
         flash("Conta a pagar adicionada.", "success")
         return redirect(url_for("pagar_list"))
 
-    itens = ContaPagar.query.order_by(ContaPagar.data_vencimento.asc()).all()
+    fornecedores_disponiveis = [
+        row[0] for row in
+        db.session.query(ContaPagar.fornecedor).distinct().order_by(ContaPagar.fornecedor.asc()).all()
+    ]
+
+    filtro_fornecedor = (request.args.get("fornecedor") or "").strip()
+    query = ContaPagar.query
+    if filtro_fornecedor:
+        query = query.filter(ContaPagar.fornecedor.ilike(f"%{filtro_fornecedor}%"))
+    itens = query.order_by(ContaPagar.data_vencimento.asc()).all()
+
     total_aberto = sum(c.valor for c in itens if c.status == "Em Aberto")
     total_atrasado = sum(c.valor for c in itens if c.status == "Atrasado")
     total_pago = sum(c.valor for c in itens if c.status == "Pago")
     return render_template(
         "pagar_list.html", itens=itens, categorias=CATEGORIAS_PAGAR,
+        fornecedores_disponiveis=fornecedores_disponiveis, filtro_fornecedor=filtro_fornecedor,
         total_aberto=total_aberto, total_atrasado=total_atrasado, total_pago=total_pago,
     )
 
