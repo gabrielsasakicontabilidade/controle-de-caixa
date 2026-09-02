@@ -390,12 +390,23 @@ def receber_list():
         flash("Conta a receber adicionada.", "success")
         return redirect(url_for("receber_list"))
 
-    itens = ContaReceber.query.order_by(ContaReceber.data_prevista.asc()).all()
+    clientes_disponiveis = [
+        row[0] for row in
+        db.session.query(ContaReceber.cliente).distinct().order_by(ContaReceber.cliente.asc()).all()
+    ]
+
+    filtro_cliente = (request.args.get("cliente") or "").strip()
+    query = ContaReceber.query
+    if filtro_cliente:
+        query = query.filter(ContaReceber.cliente.ilike(f"%{filtro_cliente}%"))
+    itens = query.order_by(ContaReceber.data_prevista.asc()).all()
+
     total_aberto = sum(c.valor_liquido for c in itens if c.status == "Em Aberto")
     total_atrasado = sum(c.valor_liquido for c in itens if c.status == "Atrasado")
     total_recebido = sum(c.valor_liquido for c in itens if c.status == "Recebido")
     return render_template(
         "receber_list.html", itens=itens, categorias=CATEGORIAS_RECEBER,
+        clientes_disponiveis=clientes_disponiveis, filtro_cliente=filtro_cliente,
         total_aberto=total_aberto, total_atrasado=total_atrasado, total_recebido=total_recebido,
     )
 
