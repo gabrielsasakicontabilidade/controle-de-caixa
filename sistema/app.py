@@ -658,6 +658,97 @@ def usuarios_redefinir_senha(item_id):
     return redirect(url_for("usuarios_list"))
 
 
+@app.route("/admin/atualizar-dados-temp", methods=["GET", "POST"])
+@admin_required
+def atualizar_dados_temp():
+    import json as _json
+
+    marcador = "Atualizado do relatorio de contas"
+    ja_atualizado = (
+        ContaPagar.query.filter(ContaPagar.observacoes.like(f"{marcador}%")).first()
+        or ContaReceber.query.filter(ContaReceber.observacoes.like(f"{marcador}%")).first()
+    )
+
+    if request.method == "POST":
+        if ja_atualizado:
+            flash("Os dados ja foram atualizados anteriormente. Nada foi feito.", "danger")
+            return redirect(url_for("atualizar_dados_temp"))
+
+        caminho_pagar = os.path.join(BASE_DIR, "data_import", "contas_pagar_import.json")
+        caminho_receber = os.path.join(BASE_DIR, "data_import", "contas_receber_import.json")
+
+        with open(caminho_pagar, encoding="utf-8") as f:
+            itens_pagar = _json.load(f)
+        with open(caminho_receber, encoding="utf-8") as f:
+            itens_receber = _json.load(f)
+
+        # Contas a Pagar: remove apenas as em aberto (nao pagas). As ja pagas ficam
+        # intactas, preservando o Movimento de Caixa vinculado a elas.
+        abertas_pagar = ContaPagar.query.filter(ContaPagar.data_pagamento.is_(None)).all()
+        qtd_removidas_pagar = len(abertas_pagar)
+        for c in abertas_pagar:
+            db.session.delete(c)
+
+        for it in itens_pagar:
+            db.session.add(ContaPagar(
+                fornecedor=it["fornecedor"],
+                descricao=it["descricao"],
+                categoria=it["categoria"],
+                data_emissao=datetime.strptime(it["data_emissao"], "%Y-%m-%d").date(),
+                data_vencimento=datetime.strptime(it["data_vencimento"], "%Y-%m-%d").date(),
+                valor=it["valor"],
+                observacoes=it["observacoes"],
+            ))
+
+        # Contas a Receber: substitui tudo (confirmado pelo cliente que as dividas
+        # antigas ja foram recebidas). Remove tambem o Movimento de Caixa vinculado
+        # a qualquer conta que porventura ja tenha sido marcada como recebida.
+        todas_receber = ContaReceber.query.all()
+        qtd_removidas_receber = len(todas_receber)
+        for c in todas_receber:
+            if c.movimento_id:
+                mov = MovimentoCaixa.query.get(c.movimento_id)
+                if mov:
+                    db.session.delete(mov)
+            db.session.delete(c)
+
+        for it in itens_receber:
+            db.session.add(ContaReceber(
+                cliente=it["cliente"],
+                descricao=it["descricao"],
+                categoria=it["categoria"],
+                data_venda=datetime.strptime(it["data_venda"], "%Y-%m-%d").date(),
+                data_prevista=datetime.strptime(it["data_prevista"], "%Y-%m-%d").date(),
+                valor_bruto=it["valor_bruto"],
+                taxa_percentual=it["taxa_percentual"],
+                observacoes=it["observacoes"],
+            ))
+
+        db.session.commit()
+        flash(
+            f"Atualizacao concluida: Contas a Pagar - {qtd_removidas_pagar} removidas / {len(itens_pagar)} inseridas. "
+            f"Contas a Receber - {qtd_removidas_receber} removidas / {len(itens_receber)} inseridas.",
+            "success",
+        )
+        return redirect(url_for("atualizar_dados_temp"))
+
+    pagar_abertas_atual = ContaPagar.query.filter(ContaPagar.data_pagamento.is_(None)).count()
+    pagar_pagas_atual = ContaPagar.query.filter(ContaPagar.data_pagamento.isnot(None)).count()
+    receber_atual = ContaReceber.query.count()
+    return f"""
+    <html><body style="font-family:sans-serif; max-width:700px; margin:40px auto;">
+    <h3>Atualizar dados dos relatorios PDF (28/09/2026)</h3>
+    <p>Contas a Pagar em aberto atualmente: {pagar_abertas_atual} (serao removidas e substituidas por 193 novas)</p>
+    <p>Contas a Pagar ja pagas (preservadas, nao mexe): {pagar_pagas_atual}</p>
+    <p>Contas a Receber cadastradas atualmente: {receber_atual} (serao todas removidas e substituidas por 1360 novas)</p>
+    <p>Status: {'<strong style="color:red">JA ATUALIZADO ANTERIORMENTE</strong>' if ja_atualizado else 'Pronto para atualizar'}</p>
+    <form method="post" onsubmit="return confirm('Confirma a atualizacao? Isso vai APAGAR as contas a pagar em aberto e TODAS as contas a receber atuais, substituindo pelos dados novos.');">
+    <button type="submit" {'disabled' if ja_atualizado else ''}
+      style="padding:10px 20px; font-size:16px;">Atualizar dados (193 Contas a Pagar + 1360 Contas a Receber)</button></form>
+    </body></html>
+    """
+
+
 def _seed_admin_inicial():
     if Usuario.query.count() == 0:
         db.session.add(Usuario(

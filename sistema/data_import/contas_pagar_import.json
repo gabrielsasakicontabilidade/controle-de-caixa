@@ -1,0 +1,1739 @@
+[
+ {
+  "fornecedor": "75 - DERCO COM E REPRESENTACAO DE PROD14U8T",
+  "descricao": "NF 6257",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-05",
+  "data_vencimento": "2026-09-26",
+  "valor": 500.52,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "376 - BR MEAT LTDA",
+  "descricao": "NF 21872",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-27",
+  "data_vencimento": "2026-09-26",
+  "valor": 1237.5,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "378 - IDEAL CURSOS LTDA",
+  "descricao": "NF 2701",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-27",
+  "data_vencimento": "2026-09-26",
+  "valor": 2350.51,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "234 - PEPSICO DO BRASIL LTDA",
+  "descricao": "NF 11686",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-07",
+  "data_vencimento": "2026-09-27",
+  "valor": 1110.59,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "236 - ROMILDO DE JESUS SILVA E CIA LTDA",
+  "descricao": "NF 14198",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-27",
+  "data_vencimento": "2026-09-27",
+  "valor": 413.77,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "6 - ATACADAO S.A.",
+  "descricao": "NF 6094843",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-09-28",
+  "valor": 656.86,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "23 - GCA DISTRIBUIDORA COMERCIAL DE ALIM",
+  "descricao": "NF 1501359",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-29",
+  "data_vencimento": "2026-09-28",
+  "valor": 452.79,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "23 - GCA DISTRIBUIDORA COMERCIAL DE ALIM",
+  "descricao": "NF 1501360",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-29",
+  "data_vencimento": "2026-09-28",
+  "valor": 531.92,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "44 - MEGAMIX DISTRIBUIDORA LTDA",
+  "descricao": "NF 143467",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-09-28",
+  "valor": 440.93,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "48 - A. R. C. LOGISTICA E ALIMENTOS LTDA",
+  "descricao": "NF 429379 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-13",
+  "data_vencimento": "2026-09-28",
+  "valor": 1293.86,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "103 - M.F. DUARTE COMERCIO DE ALIMENTOS L",
+  "descricao": "NF 424512 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-09-28",
+  "valor": 67.43,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "103 - M.F. DUARTE COMERCIO DE ALIMENTOS L",
+  "descricao": "NF 424513 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-09-28",
+  "valor": 414.62,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "160 - LONDRISAUDE PROD. ALIMENTICIOS LTDA",
+  "descricao": "NF 386962",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-09-28",
+  "valor": 224.5,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "232 - FRIMESA COOPERATIVA CENTRAL",
+  "descricao": "NF 3799003",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-21",
+  "data_vencimento": "2026-09-28",
+  "valor": 1124.38,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "232 - FRIMESA COOPERATIVA CENTRAL",
+  "descricao": "NF 3799002",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-21",
+  "data_vencimento": "2026-09-28",
+  "valor": 186.1,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2208100 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-28",
+  "data_vencimento": "2026-09-28",
+  "valor": 426.72,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2207082 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-27",
+  "data_vencimento": "2026-09-28",
+  "valor": 711.26,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2210153 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-03",
+  "data_vencimento": "2026-09-28",
+  "valor": 323.86,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "261 - BOI DOURADO DISTRIBUIDORA DE CARNES",
+  "descricao": "NF 7241 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-21",
+  "data_vencimento": "2026-09-28",
+  "valor": 1132.56,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "275 - E B LEMES JUNIOR & CIA LTDA",
+  "descricao": "NF 36761 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-19",
+  "data_vencimento": "2026-09-28",
+  "valor": 408.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "374 - JAHEMI TEXTIL LTDA",
+  "descricao": "NF 7162 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-26",
+  "data_vencimento": "2026-09-28",
+  "valor": 217.15,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "245 - R B LEMES LTDA",
+  "descricao": "NF 22099",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-09-29",
+  "valor": 518.84,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "249 - BRF S.A.",
+  "descricao": "NF 4944736",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-30",
+  "data_vencimento": "2026-09-29",
+  "valor": 580.8,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "279 - ARCOM S/A",
+  "descricao": "NF 554899 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-28",
+  "data_vencimento": "2026-09-29",
+  "valor": 576.76,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "40 - FRANGOS PIONEIRO INDUSTRIA E COMER2C",
+  "descricao": "NF 933242",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-09-30",
+  "valor": 318.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "136 - PASTIFICIO SELMI S/A",
+  "descricao": "NF 929067 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-16",
+  "data_vencimento": "2026-09-30",
+  "valor": 344.73,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "222 - DISNORTE DISTRIBUIDORA NORTE PARANA",
+  "descricao": "NF 503210",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-09-30",
+  "valor": 939.63,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "252 - D'LORO CEREALISTA E ALIMENTOS LTDA",
+  "descricao": "NF 7370 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-09-30",
+  "valor": 219.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "260 - MANFRIM INDUSTRIAL E COMERCIAL LTDA",
+  "descricao": "NF 5976784 (parc 7/7)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-08",
+  "data_vencimento": "2026-09-30",
+  "valor": 381.17,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "274 - NINFA ALIMENTOS LTDA",
+  "descricao": "NF 27604",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-09-30",
+  "valor": 650.15,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "287 - INDUSTRIA DE PAES BRUNELLA LTDA",
+  "descricao": "NF 820",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-09-30",
+  "valor": 493.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "304 - KAIQUE CASSIO LOPES COMERCIO DE GAS",
+  "descricao": "NF 117",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-09-30",
+  "valor": 910.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "381 - 52.847.059 JAQUELINE DA SILVA MUZZO",
+  "descricao": "NF 8758271",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-09-30",
+  "valor": 384.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "5 - ESMERALDINA V DA SILVA E CIA LTDA",
+  "descricao": "NF 524235",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-03",
+  "data_vencimento": "2026-10-01",
+  "valor": 295.89,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "6 - ATACADAO S.A.",
+  "descricao": "NF 6095713",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-03",
+  "data_vencimento": "2026-10-01",
+  "valor": 832.7,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "6 - ATACADAO S.A.",
+  "descricao": "NF 6099272",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-01",
+  "valor": 696.53,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "6 - ATACADAO S.A.",
+  "descricao": "NF 6104563",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-01",
+  "valor": 696.53,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "26 - ATACADO MARINGA INDUSTRIA E COMERCI",
+  "descricao": "NF 866731 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-27",
+  "data_vencimento": "2026-10-01",
+  "valor": 577.18,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "173 - COAMO AGROINDUSTRIAL COOPERATIVA",
+  "descricao": "NF 529542",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-05",
+  "data_vencimento": "2026-10-01",
+  "valor": 912.4,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "241 - MARIANA ROHR KUHN & CIA LTDA",
+  "descricao": "NF 1081371 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-01",
+  "valor": 509.9,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "244 - NORTESUL PARANA DISTRIBUIDORA LTDA",
+  "descricao": "NF 88881 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-01",
+  "valor": 495.27,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "260 - MANFRIM INDUSTRIAL E COMERCIAL LTDA",
+  "descricao": "NF 5999795 (parc 4/7)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-10-01",
+  "valor": 218.91,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "262 - RUFINI ALIMENTOS LTDA",
+  "descricao": "NF 425793",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-10-01",
+  "valor": 325.44,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "263 - ACACIA COMERCIO DE BEBIDAS LTDA",
+  "descricao": "NF 149711",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-01",
+  "valor": 236.97,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "288 - M F R CARDOSO LTDA",
+  "descricao": "NF 401",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-01",
+  "data_vencimento": "2026-10-01",
+  "valor": 162.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "292 - ELETROGOIS COMERCIO DE MAT. ELETRIC",
+  "descricao": "NF 8765",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-01",
+  "data_vencimento": "2026-10-01",
+  "valor": 551.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "382 - TROPEIRO COMERCIO DE BEBIDAS LTDA.",
+  "descricao": "NF 481947 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-17",
+  "data_vencimento": "2026-10-01",
+  "valor": 946.9,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "386 - MAXI CARTAZES E ETIQUETAS LTDA",
+  "descricao": "NF 13362 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-01",
+  "valor": 263.14,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "386 - MAXI CARTAZES E ETIQUETAS LTDA",
+  "descricao": "NF 13376 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-01",
+  "valor": 263.14,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "47 - DIALLI DISTR DE ALIM LTDA",
+  "descricao": "NF 2024963 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-28",
+  "data_vencimento": "2026-10-02",
+  "valor": 209.28,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "236 - ROMILDO DE JESUS SILVA E CIA LTDA",
+  "descricao": "NF 14225",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-10-02",
+  "valor": 114.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "238 - MARQUESPAN INDUSTRIA DE ALIMENTOS 2L",
+  "descricao": "NF 376803",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-02",
+  "valor": 2563.58,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "245 - R B LEMES LTDA",
+  "descricao": "NF 22154",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-25",
+  "data_vencimento": "2026-10-02",
+  "valor": 538.46,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "246 - ONIZ DISTRIBUIDORA S.A.",
+  "descricao": "NF 696805",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-28",
+  "data_vencimento": "2026-10-02",
+  "valor": 406.8,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "261 - BOI DOURADO DISTRIBUIDORA DE CARNES",
+  "descricao": "NF 7431 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-25",
+  "data_vencimento": "2026-10-02",
+  "valor": 415.12,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "266 - NAVARRO JUNIOR COMERCIAL DE DOCES L",
+  "descricao": "NF 18589 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-02",
+  "valor": 367.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "266 - NAVARRO JUNIOR COMERCIAL DE DOCES L",
+  "descricao": "NF 18698 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-17",
+  "data_vencimento": "2026-10-02",
+  "valor": 608.45,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "275 - E B LEMES JUNIOR & CIA LTDA",
+  "descricao": "NF 36897",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-10-02",
+  "valor": 544.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "285 - KOEPSEL & KOEPSEL LTDA",
+  "descricao": "NF 77111",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-02",
+  "valor": 431.52,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "302 - JB DISTRIBUIDORA DE OVOS LTDA",
+  "descricao": "NF 3203",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-10-02",
+  "valor": 320.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "309 - KELLY CRISTINA NENCI",
+  "descricao": "NF 4707549",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-10-02",
+  "valor": 250.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "313 - ROSILDA APARECIDA DA SILVA BATISTA",
+  "descricao": "NF 8772110",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-10-02",
+  "valor": 240.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "340 - LIECHOCKI & LIECHOCKI LTDA",
+  "descricao": "NF 22301",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-10-02",
+  "valor": 210.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "355 - F A FERREIRA & CIA LTDA",
+  "descricao": "NF 27609",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-02",
+  "data_vencimento": "2026-10-02",
+  "valor": 579.2,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "0 - FINAC ENERGIA SOLAR",
+  "descricao": "NF 929 (parc 53/60)",
+  "categoria": "Outros",
+  "data_emissao": "2022-06-03",
+  "data_vencimento": "2026-10-03",
+  "valor": 3782.06,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026 - Origem: Despesa: 2 - DESPESAS DO MERCADO"
+ },
+ {
+  "fornecedor": "58 - HEFLAN EMP. E DIST. DE PROD. ALIM.",
+  "descricao": "NF 46041",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-03",
+  "valor": 471.56,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "63 - CERTANO COMERCIAL DE ALIMENTOS LTDA",
+  "descricao": "NF 950768",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-03",
+  "valor": 546.54,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "63 - CERTANO COMERCIAL DE ALIMENTOS LTDA",
+  "descricao": "NF 951947 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-03",
+  "valor": 474.5,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "291 - DENER FRANGOS DISTRIBUIDORA DE ALIM",
+  "descricao": "NF 2740421",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-20",
+  "data_vencimento": "2026-10-03",
+  "valor": 968.39,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "376 - BR MEAT LTDA",
+  "descricao": "NF 21979",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-03",
+  "data_vencimento": "2026-10-03",
+  "valor": 2462.5,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "377 - OURIPAN COMERCIO DE PRODUTOS ALIME4N",
+  "descricao": "NF 58287",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-03",
+  "data_vencimento": "2026-10-03",
+  "valor": 189.8,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "41 - NESTLE BRASIL LTDA",
+  "descricao": "NF 2759694",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-04",
+  "valor": 234.4,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "240 - E C SCHMIDT & CIA LTDA",
+  "descricao": "NF 285691",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-04",
+  "valor": 42.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "336 - J CONSANI JUNIOR",
+  "descricao": "NF 7334",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-04",
+  "valor": 460.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "6 - ATACADAO S.A.",
+  "descricao": "NF 6101358",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-05",
+  "valor": 633.2,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "91 - ARIOVALDO COSTA PAULO E CIA LTDA",
+  "descricao": "NF 1865806",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-05",
+  "valor": 398.37,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "100 - DEYCON COMERCIO E DISTRIBUICAO LTDA",
+  "descricao": "NF 62915 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-21",
+  "data_vencimento": "2026-10-05",
+  "valor": 397.9,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "103 - M.F. DUARTE COMERCIO DE ALIMENTOS L",
+  "descricao": "NF 424512 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-10-05",
+  "valor": 67.43,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "103 - M.F. DUARTE COMERCIO DE ALIMENTOS L",
+  "descricao": "NF 424513 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-10-05",
+  "valor": 414.62,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "215 - DIFRIPAR LOGISTICA E DISTRIBUICAO L",
+  "descricao": "NF 2101374",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-17",
+  "data_vencimento": "2026-10-05",
+  "valor": 399.65,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2208100 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-28",
+  "data_vencimento": "2026-10-05",
+  "valor": 426.71,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2210153 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-03",
+  "data_vencimento": "2026-10-05",
+  "valor": 323.87,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2211276",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-05",
+  "data_vencimento": "2026-10-05",
+  "valor": 338.14,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2211277",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-05",
+  "data_vencimento": "2026-10-05",
+  "valor": 656.43,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "261 - BOI DOURADO DISTRIBUIDORA DE CARNES",
+  "descricao": "NF 7241 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-21",
+  "data_vencimento": "2026-10-05",
+  "valor": 1132.56,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2218494 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-06",
+  "valor": 390.24,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "239 - BDL DISTRIBUIDORA DE PRODUTOS ALIME",
+  "descricao": "NF 391510",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-06",
+  "valor": 228.78,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "282 - RAMPINELLI ALIMENTOS LTDA",
+  "descricao": "NF 369778",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-15",
+  "data_vencimento": "2026-10-06",
+  "valor": 1530.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "49 - BONO & CONSTANTINO LTDA",
+  "descricao": "NF 416887",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-16",
+  "data_vencimento": "2026-10-07",
+  "valor": 375.25,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "136 - PASTIFICIO SELMI S/A",
+  "descricao": "NF 929067 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-16",
+  "data_vencimento": "2026-10-07",
+  "valor": 344.62,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "251 - FRANCO DISTRIBUIDORA DE BEBIDAS LTD",
+  "descricao": "NF 98545",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-07",
+  "valor": 261.12,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "252 - D'LORO CEREALISTA E ALIMENTOS LTDA",
+  "descricao": "NF 7370 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-07",
+  "valor": 219.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "285 - KOEPSEL & KOEPSEL LTDA",
+  "descricao": "NF 77259 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-10-07",
+  "valor": 630.25,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "0 - KGIRO - PEAC FGI",
+  "descricao": "NF 931 (parc 19/36)",
+  "categoria": "Outros",
+  "data_emissao": "2025-04-08",
+  "data_vencimento": "2026-10-08",
+  "valor": 3525.4,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026 - Origem: Despesa: 2 - DESPESAS DO MERCADO"
+ },
+ {
+  "fornecedor": "5 - ESMERALDINA V DA SILVA E CIA LTDA",
+  "descricao": "NF 525249",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-08",
+  "valor": 111.68,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "6 - ATACADAO S.A.",
+  "descricao": "NF 6099271",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-08",
+  "valor": 949.56,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "33 - KALEMPA E TEIXEIRA LTDA",
+  "descricao": "NF 46662",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-08",
+  "data_vencimento": "2026-10-08",
+  "valor": 48.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "71 - COAMO AGROINDUSTRIAL COOPERATIVA 1",
+  "descricao": "NF 919460",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-08",
+  "valor": 2735.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "71 - COAMO AGROINDUSTRIAL COOPERATIVA 1",
+  "descricao": "NF 919461",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-08",
+  "valor": 34.8,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "241 - MARIANA ROHR KUHN & CIA LTDA",
+  "descricao": "NF 1081371 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-08",
+  "valor": 509.9,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "244 - NORTESUL PARANA DISTRIBUIDORA LTDA",
+  "descricao": "NF 88881 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-08",
+  "valor": 495.28,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "255 - 3 D INDUSTRIA DE REFRIGERANTES LTDA",
+  "descricao": "NF 184960",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-10-08",
+  "valor": 440.58,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "260 - MANFRIM INDUSTRIAL E COMERCIAL LTDA",
+  "descricao": "NF 5999795 (parc 5/7)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-10-08",
+  "valor": 218.91,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "382 - TROPEIRO COMERCIO DE BEBIDAS LTDA.",
+  "descricao": "NF 481947 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-17",
+  "data_vencimento": "2026-10-08",
+  "valor": 946.9,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "386 - MAXI CARTAZES E ETIQUETAS LTDA",
+  "descricao": "NF 13362 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-08",
+  "valor": 263.13,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "386 - MAXI CARTAZES E ETIQUETAS LTDA",
+  "descricao": "NF 13376 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-08",
+  "valor": 263.13,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "49 - BONO & CONSTANTINO LTDA",
+  "descricao": "NF 416327",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-10-09",
+  "valor": 210.25,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "75 - DERCO COM E REPRESENTACAO DE PROD14U8T",
+  "descricao": "NF 9494",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-09",
+  "valor": 463.2,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "100 - DEYCON COMERCIO E DISTRIBUICAO LTDA",
+  "descricao": "NF 646168",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-09",
+  "valor": 475.64,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "100 - DEYCON COMERCIO E DISTRIBUICAO LTDA",
+  "descricao": "NF 646402",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-09",
+  "valor": 633.44,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "100 - DEYCON COMERCIO E DISTRIBUICAO LTDA",
+  "descricao": "NF 646598",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-09",
+  "valor": 494.39,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "100 - DEYCON COMERCIO E DISTRIBUICAO LTDA",
+  "descricao": "NF 647212",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-09",
+  "valor": 1120.71,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "100 - DEYCON COMERCIO E DISTRIBUICAO LTDA",
+  "descricao": "NF 646403",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-09",
+  "valor": 124.65,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "238 - MARQUESPAN INDUSTRIA DE ALIMENTOS 2L",
+  "descricao": "NF 390386",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-25",
+  "data_vencimento": "2026-10-09",
+  "valor": 2237.82,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "240 - E C SCHMIDT & CIA LTDA",
+  "descricao": "NF 286660",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-25",
+  "data_vencimento": "2026-10-09",
+  "valor": 423.94,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "243 - PLANET ICE DISTRIBUIDORA DE SORVETE",
+  "descricao": "NF 430867",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-04",
+  "data_vencimento": "2026-10-09",
+  "valor": 594.1,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "261 - BOI DOURADO DISTRIBUIDORA DE CARNES",
+  "descricao": "NF 7431 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-25",
+  "data_vencimento": "2026-10-09",
+  "valor": 415.13,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "266 - NAVARRO JUNIOR COMERCIAL DE DOCES L",
+  "descricao": "NF 18698 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-17",
+  "data_vencimento": "2026-10-09",
+  "valor": 608.45,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "268 - DESTRO COMERCIO DE ALIMENTOS LTDA",
+  "descricao": "NF 1661035",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-09",
+  "valor": 274.9,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "268 - DESTRO COMERCIO DE ALIMENTOS LTDA",
+  "descricao": "NF 1661020 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-09",
+  "valor": 643.56,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "268 - DESTRO COMERCIO DE ALIMENTOS LTDA",
+  "descricao": "NF 1661019",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-09",
+  "valor": 525.05,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "275 - E B LEMES JUNIOR & CIA LTDA",
+  "descricao": "NF 36939",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-10-09",
+  "valor": 544.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "302 - JB DISTRIBUIDORA DE OVOS LTDA",
+  "descricao": "NF 3218",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-10-09",
+  "valor": 150.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "306 - JOSE APARECIDO RIBEIRO",
+  "descricao": "NF 90920001",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-10-09",
+  "valor": 1145.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "331 - DISTRIBUIDORA DE BEBIDAS SAO PEDRO",
+  "descricao": "NF 2824",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-09",
+  "data_vencimento": "2026-10-09",
+  "valor": 323.76,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "0 - CAPITAL DE GIRO",
+  "descricao": "NF 930 (parc 20/36)",
+  "categoria": "Outros",
+  "data_emissao": "2025-03-10",
+  "data_vencimento": "2026-10-10",
+  "valor": 5179.96,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026 - Origem: Despesa: 2 - DESPESAS DO MERCADO"
+ },
+ {
+  "fornecedor": "63 - CERTANO COMERCIAL DE ALIMENTOS LTDA",
+  "descricao": "NF 951947 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-10",
+  "valor": 474.51,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "63 - CERTANO COMERCIAL DE ALIMENTOS LTDA",
+  "descricao": "NF 953510 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-10",
+  "valor": 394.54,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "236 - ROMILDO DE JESUS SILVA E CIA LTDA",
+  "descricao": "NF 14279",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-10",
+  "valor": 571.24,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "234 - PEPSICO DO BRASIL LTDA",
+  "descricao": "NF 11796",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-21",
+  "data_vencimento": "2026-10-11",
+  "valor": 1312.69,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "26 - ATACADO MARINGA INDUSTRIA E COMERCI",
+  "descricao": "NF 872687",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-12",
+  "valor": 368.4,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "47 - DIALLI DISTR DE ALIM LTDA",
+  "descricao": "NF 2033129",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-12",
+  "data_vencimento": "2026-10-12",
+  "valor": 263.42,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "91 - ARIOVALDO COSTA PAULO E CIA LTDA",
+  "descricao": "NF 1873008",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-12",
+  "valor": 239.88,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "100 - DEYCON COMERCIO E DISTRIBUICAO LTDA",
+  "descricao": "NF 62915 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-21",
+  "data_vencimento": "2026-10-12",
+  "valor": 397.9,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "121 - GUAITA CERVEJARIA LTDA",
+  "descricao": "NF 39649",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-12",
+  "data_vencimento": "2026-10-12",
+  "valor": 305.7,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "215 - DIFRIPAR LOGISTICA E DISTRIBUICAO L",
+  "descricao": "NF 2108152",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-25",
+  "data_vencimento": "2026-10-12",
+  "valor": 124.82,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2212860",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-12",
+  "valor": 482.94,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "386 - MAXI CARTAZES E ETIQUETAS LTDA",
+  "descricao": "NF 13377",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-12",
+  "valor": 443.59,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "6 - ATACADAO S.A.",
+  "descricao": "NF 6101357",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-13",
+  "valor": 899.99,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "6 - ATACADAO S.A.",
+  "descricao": "NF 6103314",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-13",
+  "valor": 696.78,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "48 - A. R. C. LOGISTICA E ALIMENTOS LTDA",
+  "descricao": "NF 433139 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-13",
+  "valor": 1499.76,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2218493",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-13",
+  "valor": 344.32,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2218494 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-13",
+  "valor": 390.24,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2218492 (parc 1/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-13",
+  "valor": 381.06,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "249 - BRF S.A.",
+  "descricao": "NF 4978500",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-13",
+  "data_vencimento": "2026-10-13",
+  "valor": 470.77,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "387 - EMPORIO BOMMER LTDA",
+  "descricao": "NF 43",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-13",
+  "valor": 460.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "33 - KALEMPA E TEIXEIRA LTDA",
+  "descricao": "NF 46775",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-14",
+  "valor": 84.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "136 - PASTIFICIO SELMI S/A",
+  "descricao": "NF 929067 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-16",
+  "data_vencimento": "2026-10-14",
+  "valor": 344.62,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "296 - CHARLES RODRIGO PEREIRA JAGUARIAIVA",
+  "descricao": "NF 2622",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-14",
+  "valor": 516.3,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "351 - JOSE SANTIL JUNIOR & CIA LTDA",
+  "descricao": "NF 12012",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-14",
+  "data_vencimento": "2026-10-14",
+  "valor": 300.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "5 - ESMERALDINA V DA SILVA E CIA LTDA",
+  "descricao": "NF 526178",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-17",
+  "data_vencimento": "2026-10-15",
+  "valor": 297.38,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "40 - FRANGOS PIONEIRO INDUSTRIA E COMER2C",
+  "descricao": "NF 939872",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-15",
+  "valor": 679.82,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "88 - PAULINOR COMERCIAL DE ALIMENTOS LTD",
+  "descricao": "NF 2348949",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-15",
+  "data_vencimento": "2026-10-15",
+  "valor": 117.99,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "111 - CAFE TRES CORACOES S A",
+  "descricao": "NF 474760 (parc 1/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-15",
+  "valor": 319.63,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "237 - OESA COMERCIO E REPRESENTACOES S/4A2",
+  "descricao": "NF 24762",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-17",
+  "data_vencimento": "2026-10-15",
+  "valor": 610.51,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "241 - MARIANA ROHR KUHN & CIA LTDA",
+  "descricao": "NF 1081371 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-15",
+  "valor": 509.91,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "244 - NORTESUL PARANA DISTRIBUIDORA LTDA",
+  "descricao": "NF 88881 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-10",
+  "data_vencimento": "2026-10-15",
+  "valor": 495.29,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "260 - MANFRIM INDUSTRIAL E COMERCIAL LTDA",
+  "descricao": "NF 5999795 (parc 6/7)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-10-15",
+  "valor": 218.91,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "267 - STIVAL ALIMENTOS INDUSTRIA E COMERC",
+  "descricao": "NF 625654",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-15",
+  "data_vencimento": "2026-10-15",
+  "valor": 954.78,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "44 - MEGAMIX DISTRIBUIDORA LTDA",
+  "descricao": "NF 146812",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-16",
+  "valor": 529.84,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "254 - PRODUTOS SANTA HELENA LTDA",
+  "descricao": "NF 1336",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-16",
+  "data_vencimento": "2026-10-16",
+  "valor": 262.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "268 - DESTRO COMERCIO DE ALIMENTOS LTDA",
+  "descricao": "NF 1661020 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-16",
+  "valor": 643.56,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "340 - LIECHOCKI & LIECHOCKI LTDA",
+  "descricao": "NF 22345",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-16",
+  "data_vencimento": "2026-10-16",
+  "valor": 230.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "355 - F A FERREIRA & CIA LTDA",
+  "descricao": "NF 0",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-16",
+  "data_vencimento": "2026-10-16",
+  "valor": 502.22,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "355 - F A FERREIRA & CIA LTDA",
+  "descricao": "NF 27708",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-16",
+  "data_vencimento": "2026-10-16",
+  "valor": 502.22,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "63 - CERTANO COMERCIAL DE ALIMENTOS LTDA",
+  "descricao": "NF 951947 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-17",
+  "valor": 474.51,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "63 - CERTANO COMERCIAL DE ALIMENTOS LTDA",
+  "descricao": "NF 953510 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-17",
+  "valor": 394.54,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "376 - BR MEAT LTDA",
+  "descricao": "NF 22171",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-17",
+  "data_vencimento": "2026-10-17",
+  "valor": 2014.5,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2220010",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-19",
+  "valor": 379.92,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "48 - A. R. C. LOGISTICA E ALIMENTOS LTDA",
+  "descricao": "NF 433139 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-20",
+  "valor": 1439.86,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2218494 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-20",
+  "valor": 390.24,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2218492 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-20",
+  "valor": 381.06,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "0 - PRC RENEGOCIACAO",
+  "descricao": "NF 932 (parc 21/24)",
+  "categoria": "Outros",
+  "data_emissao": "2025-02-21",
+  "data_vencimento": "2026-10-21",
+  "valor": 567.89,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026 - Origem: Despesa: 2 - DESPESAS DO MERCADO"
+ },
+ {
+  "fornecedor": "156 - ANACONDA INDUSTRIAL E AGRÃ-COLA DE",
+  "descricao": "NF 1409574",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-23",
+  "data_vencimento": "2026-10-21",
+  "valor": 308.27,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "346 - ADRIANO BASSO & CIA LTDA",
+  "descricao": "NF 96",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-21",
+  "data_vencimento": "2026-10-21",
+  "valor": 418.06,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "111 - CAFE TRES CORACOES S A",
+  "descricao": "NF 474760 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-22",
+  "valor": 319.63,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "244 - NORTESUL PARANA DISTRIBUIDORA LTDA",
+  "descricao": "NF 89162",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-22",
+  "valor": 159.6,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "253 - DISTRIBUIDORA DE SUCOS NORTE PIONEI",
+  "descricao": "NF 15072",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-22",
+  "valor": 108.6,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "260 - MANFRIM INDUSTRIAL E COMERCIAL LTDA",
+  "descricao": "NF 5999795 (parc 7/7)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-31",
+  "data_vencimento": "2026-10-22",
+  "valor": 218.95,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "295 - AMENDOLEVE ALIMENTOS LTDA",
+  "descricao": "NF 16276",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-22",
+  "data_vencimento": "2026-10-22",
+  "valor": 661.1,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "243 - PLANET ICE DISTRIBUIDORA DE SORVETE",
+  "descricao": "NF 431562",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-23",
+  "valor": 404.32,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "268 - DESTRO COMERCIO DE ALIMENTOS LTDA",
+  "descricao": "NF 1661020 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-18",
+  "data_vencimento": "2026-10-23",
+  "valor": 643.56,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "5 - ESMERALDINA V DA SILVA E CIA LTDA",
+  "descricao": "NF 527024",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-24",
+  "valor": 74.88,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "111 - CAFE TRES CORACOES S A",
+  "descricao": "NF 474760 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-24",
+  "valor": 319.63,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "236 - ROMILDO DE JESUS SILVA E CIA LTDA",
+  "descricao": "NF 14323",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-25",
+  "valor": 292.74,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "240 - E C SCHMIDT & CIA LTDA",
+  "descricao": "NF 286655",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-25",
+  "data_vencimento": "2026-10-25",
+  "valor": 126.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "235 - PEDRO MUFFATO & CIA LTDA",
+  "descricao": "NF 2219796",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-24",
+  "data_vencimento": "2026-10-26",
+  "valor": 352.58,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "387 - EMPORIO BOMMER LTDA",
+  "descricao": "NF 74",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-25",
+  "data_vencimento": "2026-10-26",
+  "valor": 460.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "392 - FARMACIA SANTA CRUZ WB LTDA",
+  "descricao": "NF 908",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-23",
+  "data_vencimento": "2026-10-26",
+  "valor": 564.0,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "48 - A. R. C. LOGISTICA E ALIMENTOS LTDA",
+  "descricao": "NF 433139 (parc 3/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-09-11",
+  "data_vencimento": "2026-10-27",
+  "valor": 1440.28,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "0 - EXPOSITOR PARA DOCES",
+  "descricao": "NF 879 (parc 5/8)",
+  "categoria": "Outros",
+  "data_emissao": "2026-06-30",
+  "data_vencimento": "2026-10-28",
+  "valor": 34.69,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026 - Origem: Despesa: 2 - DESPESAS DO MERCADO"
+ },
+ {
+  "fornecedor": "374 - JAHEMI TEXTIL LTDA",
+  "descricao": "NF 7162 (parc 2/2)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-26",
+  "data_vencimento": "2026-10-28",
+  "valor": 217.15,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ },
+ {
+  "fornecedor": "279 - ARCOM S/A",
+  "descricao": "NF 554899 (parc 2/3)",
+  "categoria": "Mercadorias/Fornecedores",
+  "data_emissao": "2026-08-28",
+  "data_vencimento": "2026-10-29",
+  "valor": 576.76,
+  "observacoes": "Atualizado do relatorio de contas a pagar (PDF) em 28/09/2026"
+ }
+]
